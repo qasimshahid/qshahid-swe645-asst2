@@ -1,0 +1,147 @@
+<!--
+Qasim Shahid
+Made via Bootstrap
+SWE645 – Assignment 1 - Part 2 
+This is for the Part 2 of the first assignment. This is just a simple survey form made using Bootstrap that satisifes the requirements of the assignment.
+This will be deployed on the EC2 instance.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Survey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5"></body>
+    <h1 class="mb-4">Student Survey Form</h1>
+    <form>
+
+        <!-- Users details and personal information-->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name:</label>
+                <input type="text" id="firstName" name="firstName" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="lastName" class="form-label">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" class="form-control" required>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Street Address:</label>
+            <input type="text" id="address" name="address" class="form-control" required>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="city" class="form-label">City:</label>
+                <input type="text" id="city" name="city" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                <label for="state" class="form-label">State:</label>
+                <input type="text" id="state" name="state" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                <label for="zip" class="form-label">ZIP:</label>
+                <input type="text" id="zip" name="zip" class="form-control" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="telephone" class="form-label">Telephone:</label>
+                <input type="tel" id="telephone" name="telephone" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="surveyDate" class="form-label">Date of Survey:</label>
+            <input type="date" id="surveyDate" name="surveyDate" class="form-control" required>
+        </div>
+
+        <!-- What they liked most -->
+        <div class="mb-3">
+            <label class="form-label">What did you like most about the campus?</label>
+            <div class="form-check">
+                <input type="checkbox" id="students" name="liked" value="students" class="form-check-input">
+                <label for="students" class="form-check-label">Students</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="location" name="liked" value="location" class="form-check-input">
+                <label for="location" class="form-check-label">Location</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="campus" name="liked" value="campus" class="form-check-input">
+                <label for="campus" class="form-check-label">Campus</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="atmosphere" name="liked" value="atmosphere" class="form-check-input">
+                <label for="atmosphere" class="form-check-label">Atmosphere</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="dorms" name="liked" value="dorms" class="form-check-input">
+                <label for="dorms" class="form-check-label">Dorm Rooms</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="sports" name="liked" value="sports" class="form-check-input">
+                <label for="sports" class="form-check-label">Sports</label>
+            </div>
+        </div>
+
+        <!-- How they became interested in the school -->
+        <div class="mb-3">
+            <label class="form-label">How did you become interested in the university?</label>
+            <div class="form-check">
+                <input type="radio" id="friends" name="interest" value="friends" class="form-check-input" required>
+                <label for="friends" class="form-check-label">Friends</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="television" name="interest" value="television" class="form-check-input">
+                <label for="television" class="form-check-label">Television</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="internet" name="interest" value="internet" class="form-check-input">
+                <label for="internet" class="form-check-label">Internet</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="other" name="interest" value="other" class="form-check-input">
+                <label for="other" class="form-check-label">Other</label>
+            </div>
+        </div>
+
+        <!-- How likely are they to reccommend school -->
+        <div class="mb-3">
+            <label for="recommendation" class="form-label">How likely are you to recommend this school?</label>
+            <select id="recommendation" name="recommendation" class="form-select" required>
+                <option value="" disabled selected>Please select...</option>
+                <option value="very-likely">Very Likely</option>
+                <option value="likely">Likely</option>
+                <option value="unlikely">Unlikely</option>
+            </select>
+        </div>
+
+        <!-- Raffle -->
+        <div class="mb-3">
+            <label for="raffle" class="form-label">Raffle (Enter 10 comma-separated numbers between 1-100):</label>
+            <input type="text" id="raffle" name="raffle" class="form-control" required>
+            <p class="text-muted small">* Winner gets free movie tickets!</p>
+        </div>
+
+        <!-- Additional comments -->
+        <div class="mb-3">
+            <label for="comments" class="form-label">Additional Comments:</label>
+            <textarea id="comments" name="comments" class="form-control" rows="4"></textarea>
+        </div>
+
+        <!-- Form submit and cancel -->
+        <div class="mt-4 mb-5">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-danger">Cancel</button>
+        </div>
+
+    </form>
+</body>
+</html>
