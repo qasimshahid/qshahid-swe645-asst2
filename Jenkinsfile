@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = 'survey-app'
+        DOCKER_IMAGE = 'qshahid/survey-app'
         REGISTRY_CREDENTIAL = 'dockerhub_credentials'
     }
     stages {
@@ -31,6 +31,7 @@ pipeline {
                 script {
                     withKubeConfigFile([credentialsId: 'kubeconfig_credentials', variable: 'KUBECONFIG']) {
                         sh 'kubectl apply -f deployment.yaml'
+                        sh 'kubectl apply -f service.yaml'
                     }
                 }
             }
