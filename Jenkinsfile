@@ -1,6 +1,6 @@
 // Author: Qasim Shahid
 // Jenkinsfile for the survey app
-// First ,it will clone the code from GitHub
+// First, it will clone the code from GitHub
 // Then it will build a Docker image and push it to Docker Hub
 // Then it will deploy the new image to our Kubernetes cluster
 // All credentials are stored in Jenkins credentials store (required to make this work)
