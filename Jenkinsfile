@@ -33,6 +33,7 @@ pipeline {
                     withKubeConfig([credentialsId: 'kubeconfig_credentials']) {
                         sh 'kubectl apply -f deployment.yaml'
                         sh 'kubectl apply -f service.yaml'
+                        sh 'kubectl rollout restart deployment/survey-app-deployment'
                     }
                 }
             }
