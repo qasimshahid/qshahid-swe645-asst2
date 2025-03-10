@@ -11,12 +11,14 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'qshahid/survey-app'
         REGISTRY_CREDENTIAL = 'dockerhub_credentials'
+        GIT_REPO_URL = 'https://github.com/qasimshahid/qshahid-swe645-asst2.git'
+
     }
     stages {
         // First, grab our code from GitHub
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/qasimshahid/qshahid-swe645-asst2.git'
+                git branch: 'main', url: "${env.GIT_REPO_URL}"
             }
         }
 
