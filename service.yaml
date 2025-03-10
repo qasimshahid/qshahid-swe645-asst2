@@ -1,3 +1,7 @@
+# Author: Qasim Shahid
+# This is our Kubernetes service for the survey app
+# It makes our app accessible from outside the cluster
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -9,5 +13,8 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 30001 # App will be accessible at http://<node-ip>:30001
+      # The port that will be exposed to the outside world
+      nodePort: 30001  # You can access the app at http://<node-ip>:30001. Make sure to open this port range in the security group of the EC2 instance.
+  
+  # NodePort means this service is accessible from outside the cluster
   type: NodePort

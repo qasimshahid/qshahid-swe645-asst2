@@ -1,3 +1,8 @@
+# Author: Qasim Shahid
+# Deployment config for the survey app
+# Sets up 3 replicas of our container to handle web traffic
+# Uses our Docker Hub image that is updated on every push to main branch on GitHub: qshahid/survey-app
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
